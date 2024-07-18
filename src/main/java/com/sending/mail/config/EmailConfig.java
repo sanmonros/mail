@@ -33,11 +33,11 @@ public class EmailConfig {
 
     @Bean
     public JavaMailSender javaMailSender(){
-
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setJavaMailProperties(getMailProperties());
         mailSender.setUsername(email);
         mailSender.setPassword(password);
+
         return mailSender;
 
     }

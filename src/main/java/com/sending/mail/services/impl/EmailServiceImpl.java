@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
+
+
 @Service
 public class EmailServiceImpl implements EmailServiceI{
 
@@ -24,9 +26,11 @@ public class EmailServiceImpl implements EmailServiceI{
 
     @Override
     public void sendMail(EmailDTO emailDTO) throws MessagingException {
+        //Codigo nuevo
         try {
             MimeMessage message = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+
             helper.setTo(emailDTO.getAddressee());
             helper.setSubject(emailDTO.getIssue());
 
